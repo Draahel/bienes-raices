@@ -108,8 +108,8 @@ const register = async ( req,res ) =>{
             }
         })
     }else{
-        const existUser = await User.findOne({where: {email}})
-        if (false) {
+        const user = await User.findOne({where: {email}})
+        if (!user) {
             return res.render('auth/register', {
                 page: 'Crear Cuenta',
                 csrfToken: req.csrfToken(),
